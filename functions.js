@@ -6,6 +6,8 @@
  */
 function greet(name) {
   // Your code here
+  if (name) console.log("Hello " + name);
+  else console.log("Hello");
 }
 
 /**
@@ -15,6 +17,8 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if (n % 2 === 0) return false;
+  else return true;
 }
 
 /**
@@ -30,6 +34,8 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  var x = n / 2;
+  return Math.floor(x);
 }
 
 /**
@@ -44,6 +50,8 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (isOdd(n)) return n * n;
+  else return n * 2;
 }
 
 /**
@@ -65,6 +73,21 @@ function squareOrDouble(n) {
  */
 function ageFromCivilID(civilID) {
   // Your code here
+  var century = civilID[0];
+  var year = civilID[1] * 10 + civilID[2];
+  var month = civilID[(3, 4)];
+  var date = civilID[(5, 6)];
+  var dateOfBirth = 0;
+
+  if (century === 1) dateOfBirth = 1800 + year;
+  else if (century === 2) dateOfBirth = 1900 + year;
+  else if (century === 3) dateOfBirth = 2000 + year;
+  else dateOfBirth = 0;
+
+  //if (month > 1)
+  //if (c ===)
+
+  return 2018 - dateOfBirth;
 }
 
 /**
@@ -80,6 +103,8 @@ function ageFromCivilID(civilID) {
  */
 function canVoteInKuwait(civilID, isKuwaiti, isRoyal) {
   // Your code here
+  if (ageFromCivilID(civilID) >= 21 && isKuwaiti && !isRoyal) return true;
+  else return false;
 }
 
 module.exports = {
